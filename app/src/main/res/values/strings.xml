@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TempConversion</string>
+    <string name="charF">"\u2109"</string>
+    <string name="charC">"\u2103"</string>
+    <string name="tap_tip">Tap the temperature:</string>
+    <string name="input_hint">Input temp Type:</string>
 </resources>
