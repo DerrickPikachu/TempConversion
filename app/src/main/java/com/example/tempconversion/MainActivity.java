@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private void calTemp() {
-            double f, c;
+            double f, c, k;
 
             try {
                 if (isF) {
@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 f = 32;
                 c = 0;
             }
+            k = c + 273.15;
 
             degF.setText(String.format("%.1f", f) + getResources().getString(R.string.charF));
             degC.setText(String.format("%.1f", c) + getResources().getString(R.string.charC));
+            degK.setText(String.format("%.1f", k) + getResources().getString(R.string.charK));
 
         }
 
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup tempType;
     private TextView degF;
     private TextView degC;
+    private TextView degK;
     private TextView inputField;
 
     @Override
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         inputField = findViewById(R.id.inputField);
         degF = findViewById(R.id.degF);
         degC = findViewById(R.id.degC);
+        degK = findViewById(R.id.degK);
         listener = new MainActivityListener();
 
         tempType.setOnCheckedChangeListener(listener);

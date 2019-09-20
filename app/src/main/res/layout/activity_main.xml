@@ -74,7 +74,7 @@
         android:id="@+id/degC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="@string/charC"
         android:textSize="44sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,10 +85,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/degK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="@string/charK"
         android:textSize="44sp"
         app:layout_constraintBottom_toBottomOf="parent"
