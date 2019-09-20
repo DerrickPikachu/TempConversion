@@ -12,21 +12,27 @@ public class MainActivity extends AppCompatActivity {
 
     private class MainActivityListener implements RadioGroup.OnCheckedChangeListener, TextWatcher {
 
-        private boolean isF;
+        private int tmpType;
+        //1 means F, 0 means C, -1 means K
 
         public MainActivityListener() {
-            isF = true;
+            tmpType = 1;
         }
 
         private void calTemp() {
             double f, c, k;
 
             try {
-                if (isF) {
+                if (tmpType == 1) {
                     f = Double.parseDouble(inputField.getText().toString());
                     c = (f - 32) * 5 / 9;
-                } else {
+                } else if (tmpType == 0){
                     c = Double.parseDouble(inputField.getText().toString());
+                    f = c * 9 / 5 + 32;
+                }
+                else {
+                    k = Double.parseDouble(inputField.getText().toString());
+                    c = k - 273.15;
                     f = c * 9 / 5 + 32;
                 }
             }
@@ -59,7 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
-            isF = !isF;
+            if (i == R.id.F)
+                tmpType = 1;
+            else if (i == R.id.C)
+                tmpType = 0;
+            else
+                tmpType = -1;
+
             calTemp();
         }
     }
